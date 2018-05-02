@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html >
+<head>
+
+  <title>Deciduos Charm: Aspiring Arborist</title>
+  <link rel="stylesheet" type="text/css" href="dcCSS.css">
+
+
+</head>
+<body ng-app="fileUpload">
+  <div class="modal" id="modal">
+      <div class='slideLeft'><</div><div class='slideRight'>></div>
+      <div class="modal-content" id="modal-content">
+      </div>
+  </div>
+<div class="main">
+  <h1>Deciduous Charm</h1>
+  <div class="linkbar">
+    <table>
+      <tr>
+        <td id='linkblog'><a href="index.htm">Blog</a></td>
+        <td id='linkabout'><a href="About.htm">About Us</a></td>
+        <td id='linkgallery' style="background-color: rgba(50, 140, 70, .9);"><a href="Gallery.htm">Gallery</a></td>
+        <td id='linkservices'><a href="Services.htm">Services</a></td>
+        <td id='linkcontact'><a href="Contact.php">Contact Us</a></td>
+      </tr>
+    </table>
+  </div>
+  <br>
+      <div class="text"  ng-controller="GalleryPostController as gPost">
+        <div id="gallery" class="contentpage">
+
+          {{gPosts}}
+
+        </div>
+
+    </div>
+  </div>
+</div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
+<script type="text/javascript" src="/fileupload/ng-file-upload.js"></script>
+  <script type="text/javascript" src="/fileupload/ng-file-upload-all.js"></script>
+<script src='app.js'></script>
+<script  src='dcJS.js'></script>
+
+</html>

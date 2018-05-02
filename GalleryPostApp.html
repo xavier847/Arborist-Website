@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html >
+<head>
+
+  <title>Deciduos Charm: Aspiring Arborist</title>
+  <link rel="stylesheet" type="text/css" href="dcCSS.css">
+
+
+</head>
+<body ng-app="fileUpload">
+  <div class="modal" id="modal">
+      <div class='slideLeft'><</div><div class='slideRight'>></div>
+      <div class="modal-content" id="modal-content">
+      </div>
+  </div>
+<div class="main">
+
+  <div><form id='GPC' ng-init="delLoad" ng-controller="GalleryPostController as gPost" name="gPost.upload_form">
+    <h1>New Gallery Post</h1>
+
+    <input ng-model="gPost.title" placeholder="Title"/>
+    <textarea ng-model="gPost.body" placeholder="Body"></textarea>
+    <input ng-model="gPost.tag" placeholder="Tags"/>
+
+
+    <files-input ng-model='gPost.images'><div class="dropzone" >
+      Drag Photos Here to Upload
+               <div class="thumbnailViewer">
+                 <img ng-repeat="image in gPost.images" style="width:100px; margin: 1.5px" ngf-thumbnail="image"/>
+               </div>
+    <input class="uploadBox"
+        type="file"
+        files-browse
+        multiple
+        ng-model="gPost.images"
+        ngf-pattern="'image/*'"
+        accept="image/*"
+        ngf-max-size="50mb"
+        />
+  </div></files-input>
+    <button type="submit" ng-click="gPost.submit(gPost); ">Post</button>
+  </form>
+      <div class="text">
+        <div id="gallery" ng-controller="delButCont" class="contentpage">
+
+          {{gPosts}}
+
+        </div>
+
+    </div>
+  </div>
+</div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
+<script type="text/javascript" src="/fileupload/ng-file-upload.js"></script>
+  <script type="text/javascript" src="/fileupload/ng-file-upload-all.js"></script>
+<script src='app.js'></script>
+<script  src='dcJS.js'></script>
+
+</html>
